@@ -60,18 +60,18 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 //static const char *volup[]    = { "amixer", "-q", "sset", "Master,0", "5%+", "unmute", NULL };
-static const char *volup[] = { "volctl.sh", "inc", "NULL" };
+static const char *volup[] = { "volctl.sh", "inc", NULL };
 //static const char *voldn[]    = { "amixer", "-q", "sset", "Master,0", "5%-", "unmute", NULL };
-static const char *voldn[] = { "volctl.sh", "dec", "NULL" };
+static const char *voldn[] = { "volctl.sh", "dec", NULL };
 //static const char *volmute[]  = { "amixer", "-q", "sset", "Master,0", "toggle", NULL };
-static const char *volmute[] = { "volctl.sh", "mute", "NULL" };
+static const char *volmute[] = { "volctl.sh", "mute", NULL };
 //static const char *brightup[] = { "/usr/bin/xbacklight", "-inc", "5%", NULL };
-static const char *brightup[] = { "brightctl.sh", "inc", "NULL" };
+static const char *brightup[] = { "brightctl.sh", "inc", NULL };
 //static const char *brightdn[] = { "/usr/bin/xbacklight", "-dec", "5%", NULL };
-static const char *brightdn[] = { "brightctl.sh", "dec", "NULL" };
-static const char *killx[] = { "killall", "xinit", "NULL" };
-static const char *fileman[] = { "pcmanfm", "NULL" };
-static const char *lockx[] = { "slock", "NULL" };
+static const char *brightdn[] = { "brightctl.sh", "dec", NULL };
+static const char *killx[] = { "killall", "xinit", NULL };
+static const char *fileman[] = { "pcmanfm", NULL };
+static const char *lockx[] = { "slock", NULL };
 
 
 static Key keys[] = {
