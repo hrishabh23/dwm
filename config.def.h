@@ -6,7 +6,7 @@ static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 0;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "DejaVu Sans Mono:size=10", "monospace:size=12"};
+static const char *fonts[]          = { "DejaVu Sans Mono:size=10", "monospace:size=12" };
 static const char dmenufont[]       = "DejaVu Sans Mono:size=10";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
@@ -71,6 +71,8 @@ static const char *brightup[] = { "brightctl.sh", "inc", "NULL" };
 //static const char *brightdn[] = { "/usr/bin/xbacklight", "-dec", "5%", NULL };
 static const char *brightdn[] = { "brightctl.sh", "dec", "NULL" };
 static const char *killx[] = { "killall", "xinit", "NULL" };
+static const char *fileman[] = { "pcmanfm", "NULL" };
+static const char *lockx[] = { "slock", "NULL" };
 
 
 static Key keys[] = {
@@ -107,7 +109,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_e,      quit,           {0} },
+	{ MODKEY,                       XK_r,      quit,           {0} },
 	{ 0,                            XF86XK_AudioLowerVolume,   spawn, { .v = voldn } },
 	{ 0,                            XF86XK_AudioRaiseVolume,   spawn, { .v = volup } },
 	{ 0,                            XF86XK_AudioMute,          spawn, { .v = volmute } },
@@ -118,7 +120,9 @@ static Key keys[] = {
 	{ 0,                            XF86XK_MonBrightnessDown,  spawn, { .v = brightdn } },
 	{ MODKEY,                       XK_q,                      spawn, { .v = brightup } },
 	{ MODKEY,                       XK_w,                      spawn, { .v = brightdn } },
-	{ MODKEY|ShiftMask,             XK_r,                      spawn, { .v = killx} },
+	{ MODKEY|ShiftMask,             XK_e,                      spawn, { .v = killx} },
+	{ MODKEY,                       XK_grave,                  spawn, { .v = fileman} },
+	{ ControlMask|Mod1Mask,         XK_l,                      spawn, { .v = lockx} },
 };
 
 /* button definitions */
