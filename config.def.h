@@ -72,6 +72,7 @@ static const char *brightdn[] = { "brightctl.sh", "dec", NULL };
 static const char *killx[] = { "killall", "xinit", NULL };
 static const char *fileman[] = { "pcmanfm", NULL };
 static const char *lockx[] = { "slock", NULL };
+static const char *browser[] = { "tabbed", "-c", "surf", "-e", NULL };
 
 
 static Key keys[] = {
@@ -117,11 +118,12 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_minus,                  spawn, { .v = volmute } },
 	{ 0,                            XF86XK_MonBrightnessUp,    spawn, { .v = brightup } },
 	{ 0,                            XF86XK_MonBrightnessDown,  spawn, { .v = brightdn } },
-	{ MODKEY,                       XK_q,                      spawn, { .v = brightup } },
-	{ MODKEY,                       XK_w,                      spawn, { .v = brightdn } },
+	{ MODKEY,                       XK_bracketright,           spawn, { .v = brightup } },
+	{ MODKEY,                       XK_bracketleft,            spawn, { .v = brightdn } },
 	{ MODKEY|ShiftMask,             XK_e,                      spawn, { .v = killx} },
 	{ MODKEY,                       XK_grave,                  spawn, { .v = fileman} },
 	{ ControlMask|Mod1Mask,         XK_l,                      spawn, { .v = lockx} },
+	{ MODKEY,                       XK_w,                      spawn, { .v = browser} },
 };
 
 /* button definitions */
